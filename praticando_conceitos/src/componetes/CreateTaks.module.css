@@ -1,0 +1,51 @@
+form {
+    margin-top: -25px;
+    display: flex;
+    justify-content: center;
+}
+
+form .input {
+
+    background: var(--gray-500);
+    border: transparent;
+    border-radius: 8px;
+    ;
+
+    height: 54px;
+    width: 628px;
+
+    margin-right: 10px;
+
+    padding: 1rem;
+
+    color: var(--gray-100);
+
+}
+
+form .btn {
+    height: 54px;
+    width: 90px;
+
+    border-radius: 8px;
+    border: transparent;
+
+    color: var(--gray-100);
+    background: var(--blueDark);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form .btn:hover{
+    background: var(--blue);
+}
+
+form img {
+    max-height: 1rem;
+    margin-left: 5px;
+
+}
+
+

@@ -1,0 +1,28 @@
+.header{
+    background: var(--gray-700);
+    height: 200px;
+    width: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to{
+    color: var(--blue);
+    font-size: 3rem;
+    font-weight: bold;
+
+}
+
+.do{
+    color: var(--purpleDark);
+    font-size: 3rem;
+    font-weight: bold;
+}
+.rocket{
+    height: 36px;
+    width: 22px;
+    margin-right:12px; ;
+}
