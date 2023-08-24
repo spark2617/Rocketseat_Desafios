@@ -56,11 +56,43 @@ export const InformacaoEntrega=styled.div`
 
     padding: 40px;
     width: 526px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
-    div{
-        display: flex;
-        text-align: start;
-        max-width: 354px;
-    }
 
+    border: 1px solid;
+    border-image: linear-gradient(to right,${props=>props.theme["yellow"]} , ${props=>props.theme["purple"]});
+    border-image-slice: 1;
+    
+
+    border-bottom-left-radius: 36px;
+    border-top-right-radius: 36px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+
+    
+    
+    
+
+    
+
+`
+
+export const Topico=styled.div`
+
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    max-width: 354px;
+    
+`
+
+export const ContainerSpan=styled.div`
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    
+    
 `

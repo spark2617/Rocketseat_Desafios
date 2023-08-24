@@ -1,6 +1,6 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import { Circle } from "../home/style";
-import { Container, MsmSuccess, Normal, Negrito, InformacaoEntrega } from "./style";
+import { Container, MsmSuccess, Normal, Negrito, InformacaoEntrega, Topico, ContainerSpan } from "./style";
 import { defaultTheme } from "../../style/themes/defalt";
 
 export function SuccessPag() {
@@ -14,44 +14,57 @@ export function SuccessPag() {
 
             <div>
                 <InformacaoEntrega>
-                    <div>
-                        <Circle bg={defaultTheme.purple}>
-                            <MapPin
-                                size={16}
-                                color={defaultTheme.background}
-                                weight="fill"
-                            />
-                        </Circle>
-                        <Normal>Entrega em 
-                            <Negrito> Rua João Daniel Martinelli, </Negrito>
-                             102 Farrapos - Porto Alegre, RS
-                        </Normal>
-                    </div>
-
-                    <div>
-                        <Circle bg={defaultTheme.yellow}>
-                            <Timer
-                                size={16}
-                                color={defaultTheme["white"]}
-                                weight="fill"
-                            />
-                        </Circle>
+                    <Topico>
                         <div>
-                            <Normal>Previsão de entrega</Normal>
-                            <Negrito>20 min - 30 min</Negrito>
+                            <Circle bg={defaultTheme.purple}>
+                                <MapPin
+                                    size={16}
+                                    color={defaultTheme.background}
+                                    weight="fill"
+                                />
+                            </Circle>
                         </div>
-                    </div>
-                    <div>
-                        <Circle bg={defaultTheme["yellow-dark"]}>
-                            <CurrencyDollar
-                                size={16}
-                                color={defaultTheme["white"]}
-                                weight="fill"
-                            />
-                        </Circle>
-                        <Normal>Pagamento na entrega</Normal>
-                        <Negrito>Cartão de Crédito</Negrito>
-                    </div>
+                        <Normal>Entrega em
+                            <Negrito> Rua João Daniel Martinelli, </Negrito>
+                            102 Farrapos - Porto Alegre, RS
+                        </Normal>
+                    </Topico>
+
+                    <Topico>
+                        <div>
+                            <Circle bg={defaultTheme.yellow}>
+                                <Timer
+                                    size={16}
+                                    color={defaultTheme["white"]}
+                                    weight="fill"
+                                />
+                            </Circle>
+                        </div>
+                        <div>
+                            <ContainerSpan>
+
+                                <Normal>Previsão de entrega</Normal>
+                                <Negrito>20 min - 30 min</Negrito>
+                            </ContainerSpan>
+                        </div>
+                    </Topico>
+                    <Topico>
+                        <div>
+                            <Circle bg={defaultTheme["yellow-dark"]}>
+                                <CurrencyDollar
+                                    size={16}
+                                    color={defaultTheme["white"]}
+                                    weight="fill"
+                                />
+                            </Circle>
+                        </div>
+                        <ContainerSpan>
+
+                            <Normal>Pagamento na entrega</Normal>
+                            <Negrito>Cartão de Crédito</Negrito>
+                        </ContainerSpan>
+
+                    </Topico>
                 </InformacaoEntrega>
 
 
