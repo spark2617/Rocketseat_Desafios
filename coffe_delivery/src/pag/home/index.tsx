@@ -3,11 +3,28 @@ import coffee from "../../assets/Img_coffee.svg"
 import { defaultTheme } from "../../style/themes/defalt"
 import { Centralizar, Circle, Container, ContainerIntens, ListCoffe, NossosCafe } from "./style"
 import { Card } from "../../components/Card.tsx"
+import { useContext } from "react"
+import { CoffeeContext } from "../../content/CoffeContent.tsx"
 
+interface Coffe{
+    
+    id:number,
+    name:string,
+    description:string,
+    categoria:string[],
+    price:string,
+    urlImg:string
+}
 
-
+interface CoffeeContextType{
+    listCoffe:Coffe[]
+}
 
 export function Home() {
+
+    const coffeeContext=useContext<CoffeeContextType>(CoffeeContext);
+    
+
     return (
         <div>
             <Container>
@@ -79,21 +96,10 @@ export function Home() {
             <Centralizar>
                 <ListCoffe>
 
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                {coffeeContext.listCoffe.map(item => (
+                    
+                        <Card key={item.id} id={item.id} name={item.name} description={item.description} categoria={item.categoria} price={item.price} urlImg={item.urlImg} />
+                    ))}
 
                 </ListCoffe>
             </Centralizar>

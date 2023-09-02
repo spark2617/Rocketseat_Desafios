@@ -123,10 +123,15 @@ export const TresButton = styled.div `
         display: flex;
         align-items: center;
         gap: 5px;
+
+        &::selection {
+            border: solid 1px;
+            border-color: blue;
+        } 
         
-          &:nth-child(3) {
+        &:nth-child(3) {
             flex-grow: 1;
-          }
+        }
 
         
     }

@@ -17,5 +17,9 @@ button, input, select, textarea, body {
     line-height: 130%;
 }
 
+button{
+    cursor: pointer;
+}
+
 
 `

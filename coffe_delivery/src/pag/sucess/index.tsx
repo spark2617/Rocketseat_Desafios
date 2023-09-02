@@ -1,7 +1,8 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
 import { Circle } from "../home/style";
-import { Container, MsmSuccess, Normal, Negrito, InformacaoEntrega, Topico, ContainerSpan } from "./style";
+import { Container, MsmSuccess, Normal, Negrito, InformacaoEntrega, Topico, ContainerSpan, ContainerTwoCenter, DivImgMotoDelivery } from "./style";
 import { defaultTheme } from "../../style/themes/defalt";
+import imgMotoDelivery from "../../assets/Illustration.svg"
 
 export function SuccessPag() {
     return (
@@ -12,7 +13,7 @@ export function SuccessPag() {
                 <span>Agora é só aguardar que logo o café chegará até você</span>
             </MsmSuccess>
 
-            <div>
+            <ContainerTwoCenter>
                 <InformacaoEntrega>
                     <Topico>
                         <div>
@@ -58,18 +59,22 @@ export function SuccessPag() {
                                 />
                             </Circle>
                         </div>
-                        <ContainerSpan>
+                        <div>
+                            <ContainerSpan>
 
-                            <Normal>Pagamento na entrega</Normal>
-                            <Negrito>Cartão de Crédito</Negrito>
-                        </ContainerSpan>
+                                <Normal>Pagamento na entrega</Normal>
+                                <Negrito>Cartão de Crédito</Negrito>
+                            </ContainerSpan>
+                        </div>
 
                     </Topico>
                 </InformacaoEntrega>
 
 
-                <div></div>
-            </div>
+                <DivImgMotoDelivery>
+                    <img src={imgMotoDelivery} alt="" />
+                </DivImgMotoDelivery>
+            </ContainerTwoCenter>
 
             {/* container */}
         </Container>

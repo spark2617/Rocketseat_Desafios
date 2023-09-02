@@ -104,13 +104,24 @@ export const Categoria = styled.div `
     line-height: 130%;
     font-weight: 500;
 
-    margin-bottom: 15px;
+    
 
 `
 
 export const ImgCoffe=styled.img `
-
+    height:120px;
+    width:120px;
     margin-top:-40px;
     margin-bottom: 20px;
+
+`
+
+export const ContainerCategory=styled.div`
+
+    display:flex;
+    flex-direction: row;
+    gap:7px;
+
+    margin-bottom: 15px;
 
 `

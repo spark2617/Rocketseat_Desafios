@@ -55,10 +55,12 @@ export function ServiceDelivery() {
                             color={defaultTheme.purple}
                         />CARTÃO DE DÉBITO</button>
 
-                        <button><Money
-                            size={16}
-                            color={defaultTheme.purple}
-                        />DINHEIRO</button>
+                        <button>
+                            <Money
+                                size={16}
+                                color={defaultTheme.purple}
+                            />DINHEIRO
+                        </button>
                     </TresButton>
 
                 </ContainerPagament>
@@ -69,26 +71,26 @@ export function ServiceDelivery() {
                 <TitleXS>Cafés selecionados</TitleXS>
                 <InfoCompre>
 
-                <CardPagCheckout/>
-                <CardPagCheckout/>
-                <CardPagCheckout/>
-                <CardPagCheckout/>
+                    <CardPagCheckout />
+                    <CardPagCheckout />
+                    <CardPagCheckout />
+                    <CardPagCheckout />
 
                     <InfoColumn>
-                    
+
                         <div>
                             <ValueProduct>Total de itens</ValueProduct>
-                            <ValueProduct>10,00</ValueProduct>
+                            <ValueProduct>R$ 10,00</ValueProduct>
                         </div>
 
                         <div>
                             <ValueProduct>Entrega</ValueProduct>
-                            <ValueProduct>10,00</ValueProduct>
+                            <ValueProduct>R$ 10,00</ValueProduct>
                         </div>
 
                         <div>
                             <ValueFinal>Total</ValueFinal>
-                            <ValueFinal>20,00</ValueFinal>
+                            <ValueFinal>R$ 20,00</ValueFinal>
                         </div>
 
                     </InfoColumn>

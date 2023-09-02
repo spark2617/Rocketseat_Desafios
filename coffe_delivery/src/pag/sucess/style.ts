@@ -5,6 +5,7 @@ export const Container=styled.div`
 
 
 
+
 `
 
 
@@ -12,6 +13,9 @@ export const MsmSuccess=styled.div`
 
     display:flex;
     flex-direction: column;
+    justify-content: space-around;
+
+    padding-left:160px;
     
     strong{
         font-size:2rem;
@@ -52,29 +56,53 @@ export const Negrito=styled.span`
 
 `
 
+export const ContainerTwoCenter=styled.div`
+
+    display:flex;
+    justify-content: center;
+
+    margin-top: 35px;
+
+    gap:50px;
+
+`
+
 export const InformacaoEntrega=styled.div`
 
     padding: 40px;
     width: 526px;
+    height: 270px;
+
     display: flex;
     flex-direction: column;
     gap: 32px;
 
+    /* border: 1px solid; */
+    position: relative;
 
-    border: 1px solid;
-    border-image: linear-gradient(to right,${props=>props.theme["yellow"]} , ${props=>props.theme["purple"]});
-    border-image-slice: 1;
-    
+
+    &::before {
+    content: "";
+    position: absolute;
+
+    inset: 0;
 
     border-bottom-left-radius: 36px;
     border-top-right-radius: 36px;
     border-bottom-right-radius: 6px;
     border-top-left-radius: 6px;
 
-    
-    
-    
+    padding: 1px; 
 
+    background:linear-gradient(to right,${props=>props.theme["yellow"]} , ${props=>props.theme["purple"]}); 
+
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+        mask-composite: exclude; 
+}
+    
     
 
 `
@@ -92,7 +120,18 @@ export const ContainerSpan=styled.div`
 
     display: flex;
     flex-direction: column;
+    
     gap: 3px;
     
     
+    
+`
+
+
+export const DivImgMotoDelivery=styled.div`
+
+    img{
+        height: 280px;
+    }
+
 `

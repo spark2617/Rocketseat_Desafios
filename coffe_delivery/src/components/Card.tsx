@@ -1,32 +1,77 @@
 import { ShoppingCartSimple } from "phosphor-react";
-import { ButtonShopping, Buy, CardCoffe, Categoria, ContainerFinancial, ImgCoffe, Price, Real } from "./Card.style.ts"
+import { ButtonShopping, Buy, CardCoffe, Categoria, ContainerFinancial, ImgCoffe, Price, Real, ContainerCategory } from "./Card.style.ts"
 import { InputNumber } from "./InputNumber.tsx";
-import imgCoffee from "../assets/Coffee.svg"
+import {useReducer} from "react"
+import { Reducer } from "../reducer/CoffeReducer.ts";
 
-export function Card() {
+
+interface Coffe {
+    id: number
+    name: string,
+    description: string,
+    categoria: string[],
+    price: string,
+    urlImg: string
+}
+
+
+interface Cart {
+    itemId: number;
+    total: number;
+}
+
+
+export function Card({ id, name, description, categoria, price, urlImg }: Coffe) {
+
+   
+
+    function colocarItemCarrinho() {
+
+        const cart: Cart = {
+            itemId: id,
+            total: 0
+        }
+
+        localStorage.setItem('coffeCart', JSON.stringify(cart));
+
+        
+    }
+
+
     return (
         <CardCoffe>
-            <ImgCoffe src={imgCoffee} alt="" />
 
-             <Categoria>Tradicional</Categoria>
+            <ImgCoffe src={urlImg} alt="" />
 
-            <h2>Expresso Tradicional</h2>
 
-            <p>O tradicional café feito com água quente e grãos moídos</p>
+            <ContainerCategory>
+                {categoria.map((item, index) => (
+                    <Categoria key={index}>{item}</Categoria>
+                ))}
+            </ContainerCategory>
+
+            <h2>{name}</h2>
+
+            <p>{description}</p>
 
             <ContainerFinancial>
                 <div>
                     <Real>R$</Real>
-                    <Price>9,90</Price>
+                    <Price>{price}</Price>
                 </div>
 
 
 
                 <Buy>
-                    <InputNumber />
+                    
+                        <InputNumber />
+                    
+                    
 
 
-                    <ButtonShopping>
+                    <ButtonShopping
+                    onClick={colocarItemCarrinho}
+                    >
                         <ShoppingCartSimple
                             size={22}
                             weight="fill"

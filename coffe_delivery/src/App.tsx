@@ -1,21 +1,31 @@
-import { Header } from "./components/Header.tsx"
 import { defaultTheme } from "./style/themes/defalt.ts"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyle } from "./style/themes/global.ts"
-import { Home } from "./pag/home/index.tsx"
-import { ServiceDelivery } from "./pag/checkout/Index.tsx"
-import { SuccessPag } from "./pag/sucess/index.tsx"
+import { BrowserRouter } from "react-router-dom"
+import { Router } from "./Router.tsx"
+import { ContentCoffeProvider } from "./content/CoffeContent.tsx"
+
 
 function App() {
   
 
+
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
-          <Header/>
+
+        <BrowserRouter>
+
+          <ContentCoffeProvider>
+              <Router/>
+          </ContentCoffeProvider>
+        
+        </BrowserRouter>
+        
+          {/* <Header/> */}
           {/* <Home/> */}
           {/* <ServiceDelivery/> */}
-          <SuccessPag/>
+          {/* <SuccessPag/> */}
 
 
           <GlobalStyle/>

@@ -68,5 +68,32 @@ export const ButtonCar = styled.button`
 
     border-radius: 8px;
 
+    position: relative;
+
+
+`
+
+export const CountItemCar=styled.span`
+
+    position: absolute;
+
+    height: 20px;
+    width: 20px;
+
+    background-color: ${props=>props.theme["yellow-dark"]};
+    color: ${props=>props.theme.white};
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size:0.875rem;
+    font-weight:100;
+    line-height:130%;
+
+    top: -8px; 
+    right:-8px;
 
 `

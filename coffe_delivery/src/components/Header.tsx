@@ -1,6 +1,6 @@
 import logo from "../assets/Logo.svg"
 import { defaultTheme } from "../style/themes/defalt"
-import { ButtonCar, ButtonLocation,  DivTwoButton, HeaderContainer } from "./Header.style"
+import { ButtonCar, ButtonLocation,  DivTwoButton, HeaderContainer,CountItemCar } from "./Header.style"
 import { MapPin, ShoppingCart } from "phosphor-react"
 
 
@@ -30,6 +30,7 @@ export function Header() {
                     color={defaultTheme["yellow-dark"]} 
                     weight="fill" 
                     />
+                    <CountItemCar>1</CountItemCar>
 
                 </ButtonCar>
             </DivTwoButton>
