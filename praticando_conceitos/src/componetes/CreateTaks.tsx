@@ -29,9 +29,7 @@ export default function CreateTaks({ create }: CreateTaksProps) {
             create(title)
             setTitle("")
         }
-        else {
-            alert("Não é permitido entrada de valor vazio!")
-        }
+        
 
     }
 
