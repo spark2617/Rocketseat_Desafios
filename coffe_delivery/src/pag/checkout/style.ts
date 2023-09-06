@@ -4,7 +4,7 @@ interface Grid {
     grid: string;
 }
 
-export const ContainerPagDelivery=styled.div`
+export const ContainerPagDelivery = styled.div`
 
     display: flex;
     flex-direction: row;
@@ -65,6 +65,11 @@ export const InputGrid = styled.input<Grid>`
     font-weight: 400;
     line-height: 130%;
 
+    &:focus{
+        outline: transparent;
+        box-shadow: 0 0 0 2px ${props => props.theme["yellow-dark"]};
+    }
+
 `
 export const TitleDiv = styled.div`
 
@@ -98,7 +103,7 @@ span{
 
 `
 
-export const TresButton = styled.div `
+export const TresButton = styled.div`
     margin-top: 32px;
 
     display: flex;
@@ -107,12 +112,20 @@ export const TresButton = styled.div `
     gap:12px;
 
 
+    input[type="radio"]{
+        display:none;
+    }
     
+    input[type="radio"]:checked + label {
+        border: 1px solid ${props => props.theme.purple};
+    }
 
-    button{
+    label{
         border:transparent;
         border-radius: 6px;
         padding: 1rem;
+
+        background: ${props => props.theme["base-button"]};
         
         font-size: 0.875rem;
         font-weight: 400;
@@ -123,14 +136,13 @@ export const TresButton = styled.div `
         display: flex;
         align-items: center;
         gap: 5px;
-
-        &::selection {
-            border: solid 1px;
-            border-color: blue;
-        } 
+        transition: 0.2s;
         
         &:nth-child(3) {
             flex-grow: 1;
+        }
+        &:hover{
+            background: ${props => props.theme["base-hover"]};
         }
 
         
@@ -140,26 +152,26 @@ export const TresButton = styled.div `
 
 
 
-export const ValueProduct=styled.span`
+export const ValueProduct = styled.span`
 
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 130%;
-    color: ${props=>props.theme["base-text"]};
+    color: ${props => props.theme["base-text"]};
 
 
 `
 
-export const ValueFinal=styled.span`
+export const ValueFinal = styled.span`
 
     font-size: 1.25rem;
     font-weight: bold;
     line-height: 130%;
-    color: ${props=>props.theme["base-subtitle"]};
+    color: ${props => props.theme["base-subtitle"]};
 
 `
 
-export const InfoCompre=styled.div`
+export const InfoCompre = styled.div`
 
     display: flex;
     flex-direction:column;
@@ -177,25 +189,31 @@ export const InfoCompre=styled.div`
 
 `
 
-export const ButtonConfirmar=styled.button`
+export const ButtonConfirmar = styled.button`
 
 height: 46px;
+width:100%;
 
 font-size:0.875rem;
 font-weight:bold;
 line-height:160%;
 
-color:${props=>props.theme.white};
-background:${props=>props.theme.yellow};
+color:${props => props.theme.white};
+background:${props => props.theme.yellow};
 
 border:transparent;
 border-radius: 6px;
 
 margin-top: 24px;
+transition: 0.2s;
+
+&:hover{
+    background:${props => props.theme["yellow-dark"]};
+}
 
 `
 
-export const InfoColumn=styled.div`
+export const InfoColumn = styled.div`
 
     display: flex;
     flex-direction:column;
@@ -212,13 +230,13 @@ export const InfoColumn=styled.div`
 
 `
 
-export const TitleXS=styled.strong`
+export const TitleXS = styled.strong`
 
         font-size:1.125rem;
         font-weight:bold;
         line-height:130%;
 
-        color:${props=>props.theme["base-subtitle"]};
+        color:${props => props.theme["base-subtitle"]};
 
         
 

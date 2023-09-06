@@ -80,6 +80,9 @@ export const ButtonShopping = styled.button`
         border: transparent;
         border-radius:8px;
 
+        &:hover{
+            background:${props => props.theme.purple};
+        }
     
 `
 

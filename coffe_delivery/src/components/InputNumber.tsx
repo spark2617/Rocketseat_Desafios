@@ -1,33 +1,26 @@
 import { Minus, Plus } from "phosphor-react";
 import { Container } from "./InputNumber.style";
-import { useContext, useEffect, useReducer } from "react";
-import { Reducer } from "../reducer/CoffeReducer";
+import { useContext, useEffect } from "react";
 
 
-// Defina os tipos de estado e ação
-interface State {
-  quantCoffe: number;
+interface Modifique{
+  count:number
+  modificadorReducer:(acao:string)=>void
 }
 
-type Action = { type: "INCREMENT" } | { type: "DECREMENT" };
+export function InputNumber({count,modificadorReducer:handleModifi}:Modifique) {
 
-
-
-export function InputNumber() {
-
-  
-  
-  const [state, dispatch] = useReducer(Reducer, { quantCoffe: 1 });
 
   function handleIncreaseValue() {
-    
-    dispatch({ type: 'INCREMENT' });
+    handleModifi("INCREMENT")
+
   }
 
   function handleDecreaseValue() {
-    
-    dispatch({ type: 'DECREMENT' });
+    handleModifi("DECREMENT")
   }
+
+  
 
   return (
     <Container>
@@ -37,7 +30,7 @@ export function InputNumber() {
 
       <input
         type="number"
-        value={state.quantCoffe}
+        value={count}
         min={1}
         max={999}
         readOnly

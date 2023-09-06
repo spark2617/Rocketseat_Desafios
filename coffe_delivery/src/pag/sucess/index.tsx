@@ -3,8 +3,13 @@ import { Circle } from "../home/style";
 import { Container, MsmSuccess, Normal, Negrito, InformacaoEntrega, Topico, ContainerSpan, ContainerTwoCenter, DivImgMotoDelivery } from "./style";
 import { defaultTheme } from "../../style/themes/defalt";
 import imgMotoDelivery from "../../assets/Illustration.svg"
+import { useContext } from "react";
+import { CoffeeContext } from "../../content/CoffeContent";
 
 export function SuccessPag() {
+
+    const context=useContext(CoffeeContext);
+
     return (
         <Container>
 
@@ -26,8 +31,8 @@ export function SuccessPag() {
                             </Circle>
                         </div>
                         <Normal>Entrega em
-                            <Negrito> Rua João Daniel Martinelli, </Negrito>
-                            102 Farrapos - Porto Alegre, RS
+                            <Negrito> Rua {context.endereco.rua}, </Negrito>
+                            {context.endereco.numero} {context.endereco.bairro} - {context.endereco.cidade}, {context.endereco.uf}
                         </Normal>
                     </Topico>
 
@@ -63,7 +68,7 @@ export function SuccessPag() {
                             <ContainerSpan>
 
                                 <Normal>Pagamento na entrega</Normal>
-                                <Negrito>Cartão de Crédito</Negrito>
+                                <Negrito>{context.endereco.formaPagamento}</Negrito>
                             </ContainerSpan>
                         </div>
 

@@ -4,21 +4,18 @@ import { defaultTheme } from "../../style/themes/defalt"
 import { Centralizar, Circle, Container, ContainerIntens, ListCoffe, NossosCafe } from "./style"
 import { Card } from "../../components/Card.tsx"
 import { useContext } from "react"
-import { CoffeeContext } from "../../content/CoffeContent.tsx"
+import { CoffeeContext, CoffeeContextType } from "../../content/CoffeContent.tsx"
 
-interface Coffe{
-    
+export interface Coffe{
     id:number,
     name:string,
     description:string,
     categoria:string[],
     price:string,
     urlImg:string
+    
 }
 
-interface CoffeeContextType{
-    listCoffe:Coffe[]
-}
 
 export function Home() {
 

@@ -1,8 +1,9 @@
 import { ShoppingCartSimple } from "phosphor-react";
 import { ButtonShopping, Buy, CardCoffe, Categoria, ContainerFinancial, ImgCoffe, Price, Real, ContainerCategory } from "./Card.style.ts"
 import { InputNumber } from "./InputNumber.tsx";
-import {useReducer} from "react"
+import {useReducer,createContext,useContext } from "react"
 import { Reducer } from "../reducer/CoffeReducer.ts";
+import { CoffeeContext, CoffeeContextType } from "../content/CoffeContent.tsx";
 
 
 interface Coffe {
@@ -15,26 +16,49 @@ interface Coffe {
 }
 
 
-interface Cart {
+export interface Cart {
     itemId: number;
     total: number;
 }
 
 
+
+export interface State {
+    count: number;
+  }
+  
+  type Action = { type: "INCREMENT" } | { type: "DECREMENT" } | { type: "RESTART" };
+
+  
+
+
+
 export function Card({ id, name, description, categoria, price, urlImg }: Coffe) {
 
    
+    const [state, dispatch] = useReducer(Reducer, { count: 1 });
+
+    function manipuladorReducer(acao:string):void{
+        if(acao=="INCREMENT"){
+            dispatch({ type: 'INCREMENT' });
+
+        }else if(acao=="DECREMENT"){
+            dispatch({ type: 'DECREMENT' });
+        }
+    }
+
+    const coffeeContext=useContext<CoffeeContextType>(CoffeeContext);
+    
 
     function colocarItemCarrinho() {
 
-        const cart: Cart = {
-            itemId: id,
-            total: 0
-        }
-
-        localStorage.setItem('coffeCart', JSON.stringify(cart));
-
+        coffeeContext.colocarItemCarrinho(id,state.count)
         
+        console.log("Carrinho atualizado no armazenamento local");
+        dispatch({ type: "RESTART" })
+           
+
+            
     }
 
 
@@ -64,7 +88,9 @@ export function Card({ id, name, description, categoria, price, urlImg }: Coffe)
 
                 <Buy>
                     
-                        <InputNumber />
+
+                        <InputNumber count={state.count} modificadorReducer={manipuladorReducer} />
+                    
                     
                     
 
